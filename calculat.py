@@ -54,7 +54,7 @@ def backspace():
 #row 1
 Button1 = Button(ButtonFrame, text="1", overrelief= "ridge", font=("Courier New", 20), command= lambda: addnumber(Button1))
 Button1.grid(column= 0 , row = 0, sticky= NSEW)
-Button2 = Button(ButtonFrame, text="2", overrelief= "ridge", font=("Courier New", 20), command= lambda: addnumber(Button2))
+Button2 = Button(ButtonFrame, text="2", overrelief= "ridge", font=("Courier New", 20),  command= lambda: addnumber(Button2))
 Button2.grid(column= 1  , row = 0, sticky= NSEW)
 Button3 = Button(ButtonFrame, text="3", overrelief= "ridge", font=("Courier New", 20), command= lambda: addnumber(Button3))
 Button3.grid(column= 2  , row = 0, sticky= NSEW)
@@ -62,13 +62,13 @@ Button3.grid(column= 2  , row = 0, sticky= NSEW)
 #row 2
 Button4 = Button(ButtonFrame, text="4", overrelief= "ridge", font=("Courier New", 20), command= lambda: addnumber(Button4))
 Button4.grid(column= 0  , row = 1, sticky= NSEW)
-Button5 = Button(ButtonFrame, text="5", overrelief= "ridge", font=("Courier New", 20), command= lambda: addnumber(Button5))
+Button5 = Button(ButtonFrame, text="5", overrelief= "ridge", font=("Courier New", 20),  command= lambda: addnumber(Button5))
 Button5.grid(column= 1  , row = 1, sticky= NSEW)
 Button6 = Button(ButtonFrame, text="6", overrelief= "ridge", font=("Courier New", 20), command= lambda: addnumber(Button6) )
 Button6.grid(column= 2  , row = 1, sticky= NSEW)
 
 #row 3
-Button7 = Button(ButtonFrame, text="7", overrelief= "ridge",font=("Courier New", 20), command= lambda: addnumber(Button7) )
+Button7 = Button(ButtonFrame, text="7", overrelief= "ridge",font=("Courier New", 20),  command= lambda: addnumber(Button7) )
 Button7.grid(column= 0  , row = 2, sticky= NSEW)
 Button8 = Button(ButtonFrame, text="8", overrelief= "ridge", font=("Courier New", 20), command= lambda: addnumber(Button8))
 Button8.grid(column= 1  , row = 2, sticky= NSEW)
