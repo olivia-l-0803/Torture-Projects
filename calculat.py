@@ -1,4 +1,8 @@
 from tkinter import *
+import pygame
+import time
+
+pygame.mixer.init()
 
 app = Tk()
 app.title("Calculator App")
@@ -22,6 +26,7 @@ def addnumber(whoclicked):
     x = Screen.cget(key="text")
     x = x + whoclicked.cget("text")
     Screen.config(text= x, fg= "black")
+    check()
 
 def enter():
     x = Screen.cget(key="text")
@@ -46,6 +51,16 @@ def backspace():
         
         x = x[:-1]
         Screen.config(text= x)
+
+def check():
+    x = Screen.cget(key="text")
+    if "67" in x:
+        pygame.mixer.music.load("what is this diddy blud doing on the calculator (Sped Up).mp3")
+        pygame.mixer.music.play()
+        
+        time.sleep(10)
+        pygame.mixer.music.stop()
+        pygame.mixer.quit()
 
 
 
