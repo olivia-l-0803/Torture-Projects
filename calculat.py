@@ -57,8 +57,9 @@ def check():
     if "67" in x:
         pygame.mixer.music.load("what is this diddy blud doing on the calculator (Sped Up).mp3")
         pygame.mixer.music.play()
-        
-        time.sleep(10)
+        pygame.mixer.music.load("67-brain-fart.mp3")
+        pygame.mixer.music.play()
+        time.sleep(9)
         pygame.mixer.music.stop()
         pygame.mixer.quit()
 
