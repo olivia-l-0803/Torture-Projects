@@ -1,8 +1,14 @@
 from tkinter import *
-import pygame
+from pydub import AudioSegment
+from pydub.playback import play
 import time
 
-pygame.mixer.init()
+a = AudioSegment.from_file("what is this diddy blud doing on the calculator (Sped Up).wav")
+b = AudioSegment.from_file("67-brain-fart.wav")
+c = AudioSegment.from_file("67-normal.wav")
+
+cacophony = a.overlay(b) 
+audio = play(cacophony)
 
 app = Tk()
 app.title("Calculator App")
@@ -26,6 +32,7 @@ def addnumber(whoclicked):
     x = Screen.cget(key="text")
     x = x + whoclicked.cget("text")
     Screen.config(text= x, fg= "black")
+    
     check()
 
 def enter():
@@ -55,13 +62,10 @@ def backspace():
 def check():
     x = Screen.cget(key="text")
     if "67" in x:
-        pygame.mixer.music.load("what is this diddy blud doing on the calculator (Sped Up).mp3")
-        pygame.mixer.music.play()
-        pygame.mixer.music.load("67-brain-fart.mp3")
-        pygame.mixer.music.play()
-        time.sleep(9)
-        pygame.mixer.music.stop()
-        pygame.mixer.quit()
+        play(cacophony)
+        time.sleep(10)
+        audio.stop()
+         
 
 
 
