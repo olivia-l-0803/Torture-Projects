@@ -1,15 +1,8 @@
 from tkinter import *
-from pydub import AudioSegment
-from pydub.playback import _play_with_simpleaudio
-from pydub.playback import play
+import pygame
 import time
 
-a = AudioSegment.from_file("what is this diddy blud doing on the calculator (Sped Up).wav")
-b = AudioSegment.from_file("67-brain-fart.wav")
-c = AudioSegment.from_file("67-normal.wav")
 
-cacophony = a.overlay(b) 
-audio = _play_with_simpleaudio(cacophony)
 
 app = Tk()
 app.title("Calculator App")
@@ -63,9 +56,7 @@ def backspace():
 def check():
     x = Screen.cget(key="text")
     if "67" in x:
-        play(cacophony)
-        time.sleep(10)
-        audio.stop()
+        
          
 
 
