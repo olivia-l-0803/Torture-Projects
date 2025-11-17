@@ -1,5 +1,6 @@
 from tkinter import *
 from pydub import AudioSegment
+from pydub.playback import _play_with_simpleaudio
 from pydub.playback import play
 import time
 
@@ -8,7 +9,7 @@ b = AudioSegment.from_file("67-brain-fart.wav")
 c = AudioSegment.from_file("67-normal.wav")
 
 cacophony = a.overlay(b) 
-audio = play(cacophony)
+audio = _play_with_simpleaudio(cacophony)
 
 app = Tk()
 app.title("Calculator App")
