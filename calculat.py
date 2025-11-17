@@ -59,14 +59,18 @@ def check():
     if "67" in x:
         calculatorsong1 = pygame.mixer.Sound("what is this diddy blud doing on the calculator (Sped Up).wav")
         fartnoise = pygame.mixer.Sound("67-brain-fart.wav")
+        sixseven =  pygame.mixer.Sound("67-kid.wav")
 
         channel1 = pygame.mixer.Channel(0)  
         channel2 = pygame.mixer.Channel(1)
         channel2.set_volume(.3)
+        channel3 = pygame.mixer.Channel(3)
+        channel3.set_volume(.5)
         
         
         channel1.play(calculatorsong1)
         channel2.play(fartnoise)
+        channel3.play(sixseven)
         time.sleep(10) 
         pygame.mixer.stop()
         
