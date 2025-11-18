@@ -40,6 +40,8 @@ def enter():
         
         answer=  str(eval(x))
         Screen.config(text= answer)
+
+        check()
     except:
         Screen.config(text= "Invalid", fg = "red")
 
@@ -63,9 +65,9 @@ def check():
 
         channel1 = pygame.mixer.Channel(0)  
         channel2 = pygame.mixer.Channel(1)
-        channel2.set_volume(.3)
+        channel2.set_volume(.2)
         channel3 = pygame.mixer.Channel(3)
-        channel3.set_volume(.5)
+        channel3.set_volume(.3)
         
         
         channel1.play(calculatorsong1)
@@ -124,7 +126,6 @@ Equalbutton.grid(column=2, row = 3, stick= NSEW)
 
 deletebutton = Button(ButtonFrame, text= "Del", overrelief= "ridge", font=("Courier New", 15), command= backspace)
 deletebutton.grid(column=0, row = 3, stick= NSEW)
-
 
 
 ButtonFrame.grid_rowconfigure(0, weight=1)
