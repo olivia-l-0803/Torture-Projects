@@ -25,7 +25,7 @@ class Meterbarthingy():
         self.background = Frame(Window, bg = "gray85", width= 600, height= 60 , borderwidth= 2, relief="solid" )
         self.Foreground = Button(self.background, bg = "PaleGreen1", width= self.Amount, height= 10 )
 
-        self.pack(10, 10)
+        self.pack(10, 30)
 
     def pack(self, padxx, padyy):
         self.background.pack(padx=padxx, pady= padyy )
@@ -35,7 +35,16 @@ class Meterbarthingy():
     def changePercent(self, percentage ):
         self.percentage = percentage
         Newwidth = int(self.Amount * self.percentage)
+
+        x = int((self.Amount - Newwidth) / 100)
+        
+        for i in range(0, 100):
+            self.Amount -= x
+            self.Foreground.config(width= self.Amount)
+            time.sleep(0.1)
+
         self.Foreground.config(width= Newwidth)
+        self.Amount = Newwidth  
          
         
 
@@ -50,7 +59,19 @@ class Meterbarthingy():
 RERICKMeTER = Meterbarthingy()
 RERICKMeTER.changePercent(.8)
 
-Screen = Label(Window, text = "", font=("Courier New", 40), fg="Black")
+
+
+
+
+
+
+
+
+
+
+
+
+Screen = Label(Window, text = "Dont make him angry.......", font=("Courier New", 20), fg="Black")
 Screen.pack(fill= "both", expand= 1)
 
 
