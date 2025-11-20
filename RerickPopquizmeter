@@ -1,0 +1,54 @@
+from tkinter import *
+import pygame
+import time
+
+
+
+
+
+        
+
+
+Window = Tk()
+Window.title("Mr. Rerick Pop Quiz Meter")
+Window.geometry("800x400")
+
+
+Title = Label(Window, text= "Mr. Rerick's Pop Quiz Meter", font=("Courier New", 30), fg="Black")
+Title.pack()
+
+
+class Meterbarthingy():
+    def __init__(self, Amount = 100, percentage = 100) :
+        self.percentage = percentage
+
+        self.background = Frame(Window, bg = "gray85", width= Amount, height= 5 , bd=2, relief="solid" )
+        self.Foreground = Button(self.background, bg = "PaleGreen1", width= 10, height= 5 )
+
+        self.pack(10, 10)
+
+    def pack(self, padxx, padyy):
+        self.background.pack(padx=padxx, pady= padyy )
+        self.Foreground.pack(fill= "y", expand=True, anchor= "w")
+        
+
+ 
+        
+
+
+
+
+
+
+RERICKMeTER = Meterbarthingy(100, 100)
+
+Screen = Label(Window, text = "", font=("Courier New", 40), fg="Black")
+Screen.pack(fill= "both", expand= 1)
+
+
+
+
+
+
+
+Window.mainloop()
