@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import ttk
+
 import time
 
 
@@ -16,58 +18,34 @@ Window.geometry("800x400")
 Title = Label(Window, text= "Mr. Rerick's Pop Quiz Meter", font=("Courier New", 30), fg="Black")
 Title.pack()
 
+class MeterBar:
+    def __init__(self, total, percent, bgg = "grey", fgg = "Springgreen"):
+        self.total = total
+        self.percent = (percent / 100)
 
-class Meterbarthingy():
-    def __init__(self, Wide = 600, Amount = 84) :
-        self.Amount = Amount
-
-        self.background = Frame(Window, bg = "gray85", width= 600, height= 60 , borderwidth= 2, relief="solid" )
-        self.Foreground = Button(self.background, bg = "PaleGreen1", width= self.Amount, height= 10 )
-
-        self.pack(10, 30)
-
-    def pack(self, padxx, padyy):
-        self.background.pack(padx=padxx, pady= padyy )
-        self.background.pack_propagate(False)
-        self.Foreground.pack(fill= "y",  anchor= "w")
-
-    def changePercent(self, percentage ):
-        self.percentage = percentage
-        Newwidth = int(self.Amount * self.percentage)
-
-        x = int((self.Amount - Newwidth) / 100)
-        
-        for i in range(0, 100):
-            self.Amount -= x
-            self.Foreground.config(width= self.Amount)
-            time.sleep(0.1)
-
-        self.Foreground.config(width= Newwidth)
-        self.Amount = Newwidth  
-         
+        self.frame = Frame(Window, width= 600, height= 100)
         
 
- 
+        self.meter = ttk.Progressbar(self.frame, maximum= total, value= (percent * self.total))
+        self.packk()
+
+    def packk(self):
         
+        self.frame.pack(padx= 30, pady = 100)
+        self.frame.pack_propagate(FALSE)
+
+        
+        self.meter.pack(expand= 1, fill= "both")
+
+    def Changing(self, new):
+        new = (new / 100)
+        self.meter.config(value = (new* self.total))
 
 
+RERICKMETER = MeterBar(100,100)
 
-
-
-
-RERICKMeTER = Meterbarthingy()
-RERICKMeTER.changePercent(.8)
-
-
-
-
-
-
-
-
-
-
-
+RERICKMETER.Changing(4)
+x = 5
 
 
 Screen = Label(Window, text = "Dont make him angry.......", font=("Courier New", 20), fg="Black")
