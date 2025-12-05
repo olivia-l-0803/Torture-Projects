@@ -1,0 +1,60 @@
+from tkinter import *
+from tkinter import ttk
+
+import time
+
+
+
+
+
+        
+
+
+Window = Tk()
+Window.title("Mr. Rerick Pop Quiz Meter")
+Window.geometry("800x400")
+
+
+Title = Label(Window, text= "Mr. Rerick's Pop Quiz Meter", font=("Courier New", 30), fg="Black")
+Title.pack()
+
+class MeterBar:
+    def __init__(self, total, percent, bgg = "grey", fgg = "Springgreen"):
+        self.total = total
+        self.percent = (percent / 100)
+
+        self.frame = Frame(Window, width= 600, height= 100)
+        
+
+        self.meter = ttk.Progressbar(self.frame, maximum= total, value= (percent * self.total))
+        self.packk()
+
+    def packk(self):
+        
+        self.frame.pack(padx= 30, pady = 100)
+        self.frame.pack_propagate(FALSE)
+
+        
+        self.meter.pack(expand= 1, fill= "both")
+
+    def Changing(self, new):
+        new = (new / 100)
+        self.meter.config(value = (new* self.total))
+
+
+RERICKMETER = MeterBar(100,100)
+
+RERICKMETER.Changing(4)
+x = 5
+
+
+Screen = Label(Window, text = "Dont make him angry.......", font=("Courier New", 20), fg="Black")
+Screen.pack(fill= "both", expand= 1)
+
+
+
+
+
+
+
+Window.mainloop()
